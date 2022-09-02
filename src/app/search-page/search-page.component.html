@@ -1,0 +1,36 @@
+<app-header-comp></app-header-comp>
+
+<div class="input-search">
+    <input placeholder="{{value}}" type="text" [(ngModel)]="value" (keyup.enter)="valueget()">
+</div>
+
+<div class="media" style="display: flex; width: 97%; padding-left: 30px; gap: 10px; padding-bottom: 20px;">
+    <div class="left-cont">
+        <h3 class="h3">Search Results</h3>
+        <ul style="justify-content: space-between; padding: 0; gap: 10px" class="listp">
+            <a (click)="searchMovie()"><li style="display:flex; justify-content: space-between; height: 40px; align-items: center;" class="list">Movies
+                <span>{{moviecount || 0}}</span>
+            </li></a>
+            <a (click)="searchTV()"><li class="list" style="display:flex; justify-content: space-between; height: 40px;align-items: center;">Tv Shows
+                <span>{{Tvcount || 0}}</span>
+            </li></a>
+            <a (click)="searchCollection()"><li class="list" style="display:flex; justify-content: space-between; height: 40px;align-items: center;">Collection
+                <span>{{collectioncount || 0}}</span>
+            </li></a>
+        </ul>
+    </div>
+    <div class="right-cont">
+        <div class="right-card" *ngFor="let items of movie">
+            <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{items.poster_path}}">
+            <div>
+                <h3>{{items.title || items.name}}</h3>
+                <p>{{items.release_date || items.first_air_date | date}}</p>
+                <div>
+                    <h4>{{items.overview}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer-component></app-footer-component>

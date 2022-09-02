@@ -1,0 +1,31 @@
+
+<nav class="nav">
+    <div class="header">
+        <div class="logo">
+            <a routerLink="/homepage"><img src="assets/images/tmdblogo.svg" width="154px" height="20px"></a>
+            <div style=""><a [routerLink]="['/filter','movies']">Movies</a></div>
+            <div style=""><a [routerLink]="['/filter','tvshows']">Tv Shows</a></div>
+        </div>
+        <div class="signout">
+            <div *ngIf="login"><a (click)="Login()">{{text}}</a></div>
+            <div *ngIf="signout"><a (click)="Signout()">{{text}}</a></div>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+            <div style=""><a (click)="closeNav()" [routerLink]="['/filter','movies']">Movies</a></div>
+            <div style=""><a (click)="closeNav()" [routerLink]="['/filter','tvshows']">Tv Shows</a></div>
+            <div class="signout">
+                <div *ngIf="login"><a (click)="Login()">{{text}}</a></div>
+                <div *ngIf="signout"><a (click)="Signout()">{{text}}</a></div>
+            </div>
+          </div>
+          <div id="main">
+            <button class="openbtn" (click)="openNav()">&#9776;</button>
+            <a class="logobtn" routerLink="/homepage"><img src="assets/images/tmdblogo.svg" width="154px" height="20px"></a>
+          </div>
+          
+    </div>
+</nav>

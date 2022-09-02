@@ -1,0 +1,24 @@
+<div class="form-container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm" class="form">
+            <div style="font-weight: Bold;">Sign Up</div>
+                <div>Email:</div>
+                <input type="email"
+                name="Email"
+                formControlName="email"
+                class="input">
+                <div *ngIf="email && email?.invalid && email.touched ">Email is invalid</div>
+                <div>Password:</div>
+                <input type="password"
+                name="password"
+                formControlName="password"
+                class="input">
+                <div *ngIf="password && password.invalid && password.touched">Password is invalid</div>
+            <div>
+                <button type="submit" [disabled]="signUpForm.invalid" class="btn" (click)="onSubmit()">
+                 Submit   </button>
+            </div>
+            <div>
+               Already Have an account <a [routerLink]="['/login']">Login In</a>
+            </div>
+    </form>
+    </div>

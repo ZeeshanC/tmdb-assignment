@@ -1,0 +1,57 @@
+<app-header-comp></app-header-comp>
+
+<h3 style="padding-left: 20px;">{{title}}</h3>
+<div class="container">
+    <div class="left-cont">
+        <div class="left-filter">
+            <div style="border-bottom:2px solid lightgray; width: 100%;"><h3 style="font-size: 1.1em;">Sort</h3></div>
+            <!-- <hr> -->
+            <label>
+                Sort Results By
+            </label>
+            <select [(ngModel)]="sort">
+                <option value="popularity.desc" selected>
+                    Popularity Descending
+                  </option>
+                  <option value="popularity.asc">Popularity Ascending</option>
+                  <option value="vote_average.desc">Rating Descending</option>
+                  <option value="vote_average.asc">Rating Ascending</option>
+                  <option value="release_date.desc">Release Date Descending</option>
+                  <option value="release_date.asc">Release Date Ascending</option>
+                  <option value="original_title.asc">Title (A-Z)</option>
+                  <option value="original_title.desc">Title (Z-A)</option>
+            </select>
+        </div>
+        <div class="left-filter">
+            <div style="border-bottom:2px solid lightgray; width: 100%;"><h3>Filters</h3></div>
+            <!-- <hr> -->
+            <label>Release Dates</label>
+            <div style="display: inline-flex;justify-content:space-between">
+                <label>From</label>
+                <input type="date" [(ngModel)]="fdate">
+            </div>
+            <div style="display: inline-flex;justify-content:space-between;align-items: center;">
+                <label>To</label>
+                <input type="date" [(ngModel)]="ldate">
+            </div>
+            <hr>
+            <label>User Score</label>
+            <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
+            <div></div>
+        </div>
+        <button class="btn" (click)="submit()"> Search </button>
+    </div>
+    <div class="right-cont">
+        <div class="right-card-cont">
+            <div class="card" *ngFor="let items of movie">
+                <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{items.poster_path}}">
+                <div style="display:flex; flex-direction:column;align-content:center;padding-left:10px"><a style="text-decoration: none; color: black;" [routerLink]="['/movieinfo/',items.id]"><h4>{{items.title || items.name}}</h4></a>
+                <label>{{items.release_date || items.first_air_date}}</label>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-footer-component></app-footer-component>

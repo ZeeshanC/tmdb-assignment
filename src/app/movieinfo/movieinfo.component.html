@@ -1,0 +1,80 @@
+<div>
+    <app-header-comp></app-header-comp>
+</div>
+<div>
+    <div class="media" style="display:flex;justify-content:center;padding: y 3px;  gap: 10px;  align-items:center;">
+        <p>OverView</p>
+        <p>Media</p>
+        <p>Fandom</p>
+        <p>Share</p>
+        </div>
+        <div class="container" style="padding-left: 10px; font-weight: 900; background: linear-gradient(0deg, rgba(1, 37, 31, 0.88), rgba(1, 37, 31, 0.88)), url('https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{backdrop[2].file_path}}') no-repeat;background-size: cover;background-position: center;">
+            <div class="movie-cont">
+                <img class="img-cont" width="350px" height="500px" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{movie.poster_path}}">
+                <div style="gap: 50px; justify-content: space-between;">
+                    <h1>{{movie.title}} ({{movie.release_date | date: 'yyyy'}})</h1>
+                    <div  style="display: flex; flex-direction:row; gap: 10px;"><p *ngFor="let item of movie.genres;">{{item.name}}</p>
+                        <p>.  ({{movie.runtime}}m)</p>
+                    </div>
+                    <p>{{movie.tagline}}</p>
+                    <h2>Overview</h2>
+                    <p>{{movie.overview}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="movie-down" style="display: flex;">
+            <div class="movie-down-left" style="width:80%">
+        <div>
+            <h2 style="padding-left: 10px;">Series Cast</h2>
+            <div class="card-cont" >
+                <div class="card" *ngFor="let items of cast">
+                    <img width="150px" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{items.profile_path}}">
+                    <h4>{{items.name}}</h4>
+                    <p>{{items.character}}</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 style="padding-left: 10px;">Recommendation</h2>
+            <div class="card-cont">
+                <div  class="card-re" *ngFor="let items of recom">
+                    <a [routerLink]="['/movieinfo',items.id]">
+                        <img width="150px" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{items.poster_path}}">
+                    </a>
+                    <div class="recom-d">
+                        <div>{{items.title}}</div>
+                        <div>{{items.vote_average/10 | percent: '2.0'}}</div>
+                    </div>
+                </div>
+                    </div>
+            </div>
+        </div>
+        <div class="facts">
+            <h3>Facts</h3>
+            <div style="">
+                <h3>Status</h3>
+                <p>{{movie.status}}</p>
+            </div>
+            <div>
+                <h3>Network</h3>
+                <p>AMC</p>
+            </div>
+            <div>
+                <h3>Type</h3>
+                <p></p>
+            </div>
+            <div>
+                <h3>Original Language</h3>
+                <p>{{movie.original_language}}</p>
+            </div>
+            <h3>Keywords</h3>
+            <div style="display: flex; flex-wrap:wrap; gap:8px;">
+                <div *ngFor="let items of keywords" style="display: flex; flex-wrap: wrap;justify-content: flex-start; padding: 0;margin: 0; gap: 0;">
+                    <p class="keyword-btn" style="list-style: none;display: inline;margin: 0;">{{items.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<app-footer-component></app-footer-component>

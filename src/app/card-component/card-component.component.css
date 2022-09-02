@@ -1,0 +1,107 @@
+.card-container{
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    overflow-y: hidden;
+    transition: height .5s linear;
+    padding: 10px;
+    
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px 20px;
+    width: 150px;
+    border: 1px solid #eeeeee;
+    /* margin-left: 40px; */
+    overflow: visible;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    box-shadow: 0px 18px 36px rgba(63, 52, 146, 0.05), 0px 30px 60px rgba(50, 75, 93, 0.1);
+    border-radius: 10px;
+}
+
+.card-img{
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border-radius: var(--imageBorderRadius);
+    width: 100%px;
+    /* min-height: calc(150px * 1.5);
+    height: calc(150px * 1.5); */
+    background: #dbdbdb;
+    overflow: hidden;
+}
+
+.head{
+    padding-left: 20px;
+}
+
+.typebtn{
+    border-radius: 10px;
+}
+
+.btn-grp{
+    border: 2px solid #032541;
+    border-radius: 10px;
+}
+
+.btn-grp button{
+    display: inline-block;
+    border: 1px solid white;
+    background: linear-gradient(#FFFFFF, #ffff);
+    color: black; /* White text */
+    /* width: 100%; */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer;
+  /* float: left; */
+  border-radius: 10px;
+  height: 35px;
+}
+
+.btn-grp button:not(:last-child){
+    border-right: none;
+}
+
+.btn-grp button:not(:first-child){
+    border-left: none;
+}
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .btn-grp button:hover{
+        background: linear-gradient(#152B40, #152B40);
+        color: white
+  }
+
+  .btn-grp button:focus{
+    background: linear-gradient(#152B40, #152B40);
+        color: white
+  }
+
+  
+  @media (max-width: 768px){
+    .btn-grp {
+        display: flex;
+        align-items: center;
+        /* width: 80%; */
+        gap: 8px;
+        /* height: 100%; */
+    }
+
+    .btn-btn{
+        width:100%;
+        display: flex;
+        padding: 0 10px !important;
+        margin: 0 !important;
+        height: 70%;
+        gap: 2px;
+    }
+  }

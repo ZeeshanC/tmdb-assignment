@@ -1,0 +1,138 @@
+.container{
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding-bottom: 20px;
+    gap: 50px;
+}
+
+.left-cont{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    gap: 10px;
+}
+.left-filter{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    /* align-items: center; */
+    padding: 14px 16px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border:  1px solid lightgray;
+    box-shadow: 1px 1px 1px 1px lightgray;
+    gap: 8px;
+}
+
+.left-filter hr{
+    padding: 0;
+    margin: 0;
+    background: lightgray;
+    width: 100%;
+}
+
+.right-cont{
+    margin: 0;
+    background: #fff;
+    width: 80%;
+}
+
+
+    .right-card-cont{
+        /* max-width: 1440px; */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        /* overflow-x: scroll; */
+        /* scrollbar-width: none; */
+        overflow-y: hidden;
+        transition: height .5s linear;
+        /* padding: 10px; */
+        background-color: #fff;
+        height: 100%;
+    }
+
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+        /* padding: 20px 20px; */
+        width: 156px;
+        border: 1px solid #eeeeee;
+        /* margin-left: 40px; */
+        /* overflow: visible; */
+        padding-bottom: 20px;
+        /* padding-top: 20px; */
+        box-shadow: 0px 18px 36px rgba(63, 52, 146, 0.05), 0px 30px 60px rgba(50, 75, 93, 0.1);
+        border-radius: 10px;
+    }
+
+    .card img{
+        box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+        border-radius: var(--imageBorderRadius);
+        width: 156px;
+        height: 70%;
+        /* min-height: calc(150px * 1.5);
+        height: calc(150px * 1.5); */
+        background: #dbdbdb;
+        overflow: hidden;
+        box-shadow: 0px 18px 36px rgba(63, 52, 146, 0.05), 0px 30px 60px rgba(50, 75, 93, 0.1);
+        border-radius: 10px 10px 0px 0px;
+    }
+    
+    .left-filter select{
+        border-color: #e4e7eb;
+    color: #212529;
+    background-color: #e4e7eb;
+    height: 35px;
+    justify-content: space-between;
+    border-radius: 10px;
+    }
+
+    ::-webkit-calendar-picker-indicator {
+        border-color: #e4e7eb;
+        color: #212529;
+        background-color: #e4e7eb;
+    }
+
+    .btn{
+        font-size: 1.2em;
+        color: rgba(0,0,0,0.5);
+    line-height: 1;
+    font-weight: 600;
+    width: 100%;
+    height: 44px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 20px;
+    cursor: pointer;
+    }
+
+    @media (max-width: 769px){
+        .container{
+            display: flex;
+            flex-direction: column;
+            /* width: 100%; */
+        }
+
+        .left-cont{
+            width: 97%;
+        }
+
+        .right-cont{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .right-card-cont{
+            align-items: center;
+        }
+    }

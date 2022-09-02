@@ -1,0 +1,54 @@
+<div style="display: flex; gap: 20px; flex-direction: row; align-items: center;gap: 0px; padding-right: 10px;">
+  <h2 class="head">What's Popular</h2>
+  <div class="btn-grp">
+    <button class="btn-btn" (click) = "stream()">Streaming</button>
+    <button class="btn-btn" (click) = "onTv()">on TV</button>
+    <button class="btn-btn" (click) = "rent()">For Rent</button>
+    <button class="btn-btn" (click) = "threat()">In Theaters</button>
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="card" *ngFor="let items of nowpopular;">
+    <div class="card-img"><img loading="lazy" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{items.poster_path}}"
+        style="background-size: cover; width: 150px; height: 225px;"></div>
+    <div style="font-weight: bold;" [routerLink]="['/movieinfo/',items.id]">{{items.title}}</div>
+    <div style="color:rgba(0,0,0,0.6)">{{items.release_date}}</div>
+  </div>
+</div>
+
+<div style="display: flex; gap: 20px; flex-direction: row; align-items: center;">
+  <h2 class="head">Free to Watch</h2>
+  <div class="btn-grp">
+    <button class="btn-btn" (click) = "movie()">Movies</button>
+    <button class="btn-btn" (click) = "tv()">TV</button>
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="card" *ngFor="let items of free">
+    <div class="card-img"><img loading="lazy" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{items.poster_path}}"
+      style="background-size: cover; width: 150px; height: 225px;"></div>
+  <div style="font-weight: bold;" [routerLink]="['/movieinfo/',items.id]">{{items.title}}</div>
+  <div style="color:rgba(0,0,0,0.6)">{{items.release_date}}</div>
+  </div>
+</div>
+
+<div style="display: flex; gap: 20px; flex-direction: row; align-items: center;">
+  <h2 class="head">Free to Watch</h2>
+  <div class="btn-grp">
+    <button class="btn-btn" (click) = "today()">Today</button>
+    <button class="btn-btn" (click) = "thisweek()">This Week</button>
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="card" *ngFor="let items of tren">
+    <div class="card-img">
+      <img loading="lazy" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{items.poster_path}}" style="background-size: cover; width: 150px; height: 225px;"></div>
+  <div style="font-weight: bold;"><a style="color: black;text-decoration: none;" [routerLink]="['/movieinfo/',items.id]">{{items.title}}</a></div>
+  <div style="color:rgba(0,0,0,0.6)">{{items.release_date}}</div>
+  </div>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
