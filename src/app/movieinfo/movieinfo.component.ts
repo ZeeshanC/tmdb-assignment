@@ -42,10 +42,20 @@ export class MovieinfoComponent implements OnInit {
     })
   }
 
+  gettvdetails(id:string){
+    this.ApiServices.getTvdetails(id).subscribe((res:any)=>{
+      this.movie = res.results
+    })
+  }
+
   getMovie(id:string){
     this.ApiServices.getMovie(id).subscribe((res:any)=>{
       this.movie = res;
+      
     })
+    if(!this.movie){
+      this.gettvdetails(id);
+    }
   }
 
   getCast(id:string){

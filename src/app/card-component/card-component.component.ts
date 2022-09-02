@@ -101,6 +101,14 @@ export class CardComponentComponent implements OnInit {
       })
     }
     
+
+  
+  }
+
+  gettvdetails(id:string){
+      this.ApiServices.getTvdetails(id).subscribe((res:any) =>{
+        this.movie = res.results;
+      })
   }
   rent(){
     if(!this.onTV && !this.streaming && !this.inTheater){

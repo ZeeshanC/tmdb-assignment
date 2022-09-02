@@ -101,4 +101,8 @@ export class ApiServices {
   gettvfilter(sort?: string,fdate?: string,tdate?: string,lscore?: number, gscore?:number): Observable<any>{
     return this.http.get(`${this.baseUrl}discover/tv?api_key=${this.apiKey}&sort_by=${sort}&first_air_date.gte=${fdate}&first_air_date.lte=${tdate}&vote_average.gte=${lscore}&vote_average.lte=${gscore}`)
   }
+
+  getTvdetails(id:string): Observable<any>{
+    return this.http.get(`${this.baseUrl}tv/${id}/?api_key=${this.apiKey}`)
+  }
 }
