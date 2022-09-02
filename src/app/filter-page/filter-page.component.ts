@@ -21,12 +21,13 @@ export class FilterPageComponent implements OnInit {
   movie:any;
   param: any;
   title: any;
+  keyword: string = '';
   
   gettext(){
     this.param= this.router?.snapshot?.paramMap?.get('id');
   }
-  submit(id?:string){
-    if(id == 'movies'){
+  submit(){
+    if(this.param == 'movies'){
       this.title = 'Popular Movies';
     this.ApiServies.getmoviefilter(this.sort,this.fdate,this.ldate,this.value,this.highValue).subscribe((res: any) =>{
       this.movie = res.results;
@@ -49,7 +50,7 @@ export class FilterPageComponent implements OnInit {
     this.router.paramMap.subscribe((res:any)=> {
       console.log(res)
       if(res.params){
-        this.submit(res.params.id)
+        this.submit()
       }
     })
     // this.submit();
