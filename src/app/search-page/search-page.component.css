@@ -79,8 +79,5 @@
 }
 
 @media (max-width: 769px){
-    .container{
-        display: flex;
-        flex-direction: column;
-    }
+    
 }

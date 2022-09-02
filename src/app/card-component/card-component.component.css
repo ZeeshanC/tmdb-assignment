@@ -3,12 +3,23 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
+    /* overflow: scroll; */
     overflow-x: scroll;
     scrollbar-width: none;
     overflow-y: hidden;
     transition: height .5s linear;
     padding: 10px;
+    -ms-overflow-style: none;
     
+}
+
+/* .card-container::-webkit-scrollbar-thumb {
+    background: #FF0000;
+} */
+
+.card-container::-webkit-scrollbar{
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;
 }
 
 .card{
