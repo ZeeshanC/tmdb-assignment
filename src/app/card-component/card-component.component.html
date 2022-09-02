@@ -35,7 +35,7 @@
 </div>
 
 <div style="display: flex; gap: 20px; flex-direction: row; align-items: center;">
-  <h2 class="head">Free to Watch</h2>
+  <h2 class="head">Trending</h2>
   <div class="btn-grp">
     <button class="btn-btn" (click) = "today()">Today</button>
     <button class="btn-btn" (click) = "thisweek()">This Week</button>
@@ -46,8 +46,8 @@
   <div class="card" *ngFor="let items of tren">
     <div class="card-img">
       <img loading="lazy" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{items.poster_path}}" style="background-size: cover; width: 150px; height: 225px;"></div>
-  <div style="font-weight: bold;"><a style="color: black;text-decoration: none;" [routerLink]="['/movieinfo/',items.id]">{{items.title}}</a></div>
-  <div style="color:rgba(0,0,0,0.6)">{{items.release_date}}</div>
+  <div style="font-weight: bold;"><a style="color: black;text-decoration: none;" [routerLink]="['/movieinfo/',items.id]">{{items.title || items.name}}</a></div>
+  <div style="color:rgba(0,0,0,0.6)">{{items.release_date || items.first_air_date}}</div>
   </div>
 </div>
 
